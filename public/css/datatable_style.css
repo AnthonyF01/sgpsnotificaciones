@@ -1,0 +1,241 @@
+/*
+ * Colour dictionary:
+ *
+ * Table control elements:   #719ba7
+ * Header cells:             #66A9BD
+ * Body header cells:        #91c5d4
+ * Body content cells:       #d5eaf0
+ * Body content cells (alt): #bcd9e1
+ * Footer header:            #b0cc7f
+ * Footer content:           #d7e1c5
+ */
+
+
+/*
+ * Page setup styles
+ */
+body {
+	/*font: 80%/1.45em Arial, Verdana, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	color: #111;
+	background-color: #fff;*/
+}
+
+#container {
+	/*margin: 0 auto;
+	width: 960px*/
+}
+
+h1 {
+	/*text-align: center;
+	font-size: 1.2em;
+	font-weight: bold;
+	margin: 1em 0;*/
+}
+
+/*
+ * DataTables framework
+ */
+div.dataTables_wrapper {
+	/*background-color: #719ba7;*/
+}
+
+div.dataTables_length {
+	float: left;
+}
+
+div.dataTables_length > label {
+	margin: 0px;
+}
+
+div.dataTables_filter {
+	float: right;
+}
+
+div.dataTables_filter > label {
+	margin: 0px;
+}
+
+div.dataTables_info {
+	padding: 9px 6px 6px 6px;
+	font-size: 12px;
+	float: left;
+}
+
+div.dataTables_paginate {
+	float: right;
+}
+
+div.dataTables_length,
+div.dataTables_filter,
+div.dataTables_paginate {
+	padding: 6px;
+	font-size: 12px;
+}
+
+/* Self clearing - http://www.webtoolkit.info/css-clearfix.html */
+.dataTables_wrapper:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+html[xmlns] .dataTables_wrapper {
+	display: block;
+}
+ 
+* html .dataTables_wrapper {
+	height: 1%;
+}
+
+
+/*
+ * Table styles
+ */
+table.datatable_style {
+	width: 100%;
+	clear: both;
+}
+
+/* Header cells */
+table.datatable_style thead th {
+	text-align: center;
+	padding: 10px 20px 10px 10px;
+	/*background: #66a9bd;*/
+}
+
+/* Body cells */
+table.datatable_style tbody th {
+	text-align: left;
+	background: #91c5d4;
+}
+	
+table.datatable_style tbody td {
+	border-bottom: 1px solid #eee;
+	text-align: center;
+	padding: 10px 5px;
+	/*background: #d5eaf0;*/
+}
+		
+table.datatable_style tbody tr.odd td { 
+	border-bottom: 1px solid #eee;
+	/*background: #bcd9e1;*/
+}
+
+/* Footer cells */	
+table.datatable_style tfoot th {
+	background: #b0cc7f;
+	text-align: left;
+}
+	
+table.datatable_style tfoot td {
+	background: #d7e1c5;
+	text-align: center;
+	font-weight: bold;
+}
+
+
+/*
+ * Pagination
+ */
+a.paginate_button,
+a.paginate_active {
+	display: inline-block;
+	background-color: #608995;
+	padding: 2px 6px;
+	margin-left: 2px;
+	cursor: pointer;
+	*cursor: hand;
+}
+
+a.paginate_active {
+	background-color: transparent;
+	border: 1px solid black;
+}
+
+a.paginate_button_disabled {
+	color: #3d6672;
+}
+.paging_full_numbers a:active {
+	outline: none
+}
+.paging_full_numbers a:hover {
+	text-decoration: none;
+}
+
+div.dataTables_paginate span>a {
+	width: 15px;
+	text-align: center;
+}
+
+
+/*
+ * Sorting
+ */
+table.datatable_style thead th.sorting_asc {
+	/*background: #66A9BD;*/
+
+	/*border-bottom: 2px solid #000;
+	border-top: 1px solid #f5f5f5;*/
+
+	background: #073b4a;
+    border-bottom: 2px solid #000;
+    border-top: 1px solid #f5f5f5;
+    color: #fff;
+}
+
+table.datatable_style thead th.sorting_desc {
+	/*background: #66A9BD;*/
+
+	/*border-bottom: 2px solid #000;
+	border-top: 1px solid #f5f5f5;*/
+
+	background: #073b4a;
+    border-bottom: 2px solid #000;
+    border-top: 1px solid #f5f5f5;
+    color: #fff;
+}
+
+table.datatable_style thead th.sorting {
+	/*background: #66A9BD;*/
+
+	/*border-bottom: 2px solid #000;
+	border-top: 1px solid #f5f5f5;*/
+
+	background: #073b4a;
+    border-bottom: 2px solid #000;
+    border-top: 1px solid #f5f5f5;
+    color: #fff;
+}
+
+table.datatable_style thead th.sorting_disabled {
+	/*background: #66A9BD;*/
+
+	/*border-bottom: 2px solid #000;
+	border-top: 1px solid #f5f5f5;*/
+
+	background: #073b4a;
+    border-bottom: 2px solid #000;
+    border-top: 1px solid #f5f5f5;
+    color: #fff;
+    border-right: 1px solid #ecf0f5;
+}
+
+table.datatable_style thead th.sorting_asc:after {
+    top: 10px;
+    right: 6px;
+}
+
+table.datatable_style thead th.sorting_desc:after {
+    top: 10px;
+    right: 6px;
+}
+
+table.datatable_style thead th.sorting:after {
+    top: 10px;
+    right: 6px;
+}

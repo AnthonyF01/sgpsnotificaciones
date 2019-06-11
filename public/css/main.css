@@ -1,0 +1,33 @@
+/* box_plus */
+
+.box_plus-default{
+    border-color: #000;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.box_plus-default > .box_plus-heading {
+    /*color: #fff;*/
+    /*background-color: #003848;*/
+    border-color: #ccc;
+    border-top: 1px solid #ccc;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.box_plus{
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.box_plus-heading{
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+}
+
+.box_plus-default > .box_plus-body{
+    background-color: #fcfcfc;
+    padding: 15px;
+}
