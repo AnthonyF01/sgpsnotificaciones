@@ -131,7 +131,12 @@ class CedulaController extends Controller
         $sjuz = Tblinstancia::where('c_instancia','=',$cjuz)->first();
         $juzgado = $sjuz->x_nom_instancia;
 
-        return response()->json(['success' => [$expediente, $cedula, $juzgado]], $this->successStatus);
+        if (isset($juzgado) && !empty($juzgado) && ($juzgado)) {
+            return response()->json(['success' => [$expediente, $cedula, $juzgado]], $this->successStatus);
+        }else {
+            return response()->json(['error' => ['La instancia no existe en la base de datos. Error en el código de barras.']], $this->successStatus);
+        }
+
 
     }
 }
