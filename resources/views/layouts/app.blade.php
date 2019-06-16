@@ -70,6 +70,15 @@
     </style>
 </head>
 <body>
+    <?php 
+        if (Auth::check()) {
+            $permissions = [];
+            for ($i=0; $i < count(Auth::user()->getPermissions()); $i++) {
+                $permissions[]=Auth::user()->getPermissions()[$i];
+            }
+            $role = Auth::user()->getRoles()[0];
+        }
+    ?>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
@@ -92,11 +101,31 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        @can('products.index')
+                        {{-- @can('products.index')
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('products.index') }}">Productos</a>
                         </li>
-                        @endcan
+                        @endcan --}}
+                        @if ( (Auth::check()) && (isset($role) && isset($permissions)) && (($role == 'admin') || (array_search('tbldiligencia.index', $permissions)) || (array_search('tblmotivo.index', $permissions))))
+                            <li class="nav-item dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Mantenimiento
+                                <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    @can('tbldiligencia.index')
+                                        <li><a href="{{ route('tbldiligencia.index') }}">Tipo de Diligencia</a></li>
+                                    @endcan
+                                    {{-- @can('tblinstancia.index')
+                                        <li><a href="{{ route('tblinstancia.index') }}">Dependencias</a></li>
+                                    @endcan --}}
+                                    @can('tblmotivo.index')
+                                        <li><a href="{{ route('tblmotivo.index') }}">Tipo de Motivo</a></li>
+                                    @endcan
+                                    {{-- @can('tblcargo.index')
+                                        <li><a href="{{ route('tblcargo.index') }}">Cargos</a></li>
+                                    @endcan --}}
+                                </ul>
+                            </li>
+                        @endif
                         @can('users.index')
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('users.index') }}">Usuarios</a>

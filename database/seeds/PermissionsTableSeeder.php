@@ -131,5 +131,67 @@ class PermissionsTableSeeder extends Seeder
             'description'   => 'Podría eliminar cualquier instancia del sistema',      
         ]);
 
+        //Tbldiligencia
+        Permission::create([
+            'name'          => 'Navegar diliencias',
+            'slug'          => 'tbldiligencia.index',
+            'description'   => 'Lista y navega todos las diliencias del sistema',
+        ]);
+
+        Permission::create([
+            'name'          => 'Ver detalle de un diligencia',
+            'slug'          => 'tbldiligencia.show',
+            'description'   => 'Ve en detalle cada diligencia del sistema',            
+        ]);
+        
+        Permission::create([
+            'name'          => 'Creación de diliencias',
+            'slug'          => 'tbldiligencia.create',
+            'description'   => 'Podría crear nuevas diliencias en el sistema',
+        ]);
+        
+        Permission::create([
+            'name'          => 'Edición de diliencias',
+            'slug'          => 'tbldiligencia.edit',
+            'description'   => 'Podría editar cualquier dato de una diligencia del sistema',
+        ]);
+        
+        Permission::create([
+            'name'          => 'Eliminar diliencias',
+            'slug'          => 'tbldiligencia.destroy',
+            'description'   => 'Podría eliminar cualquier diligencia del sistema',      
+        ]);
+
+        //Tblmotivo
+        Permission::create([
+            'name'          => 'Navegar motivos',
+            'slug'          => 'tblmotivo.index',
+            'description'   => 'Lista y navega todos las motivos del sistema',
+        ]);
+
+        Permission::create([
+            'name'          => 'Ver detalle de un motivo',
+            'slug'          => 'tblmotivo.show',
+            'description'   => 'Ve en detalle cada motivo del sistema',            
+        ]);
+        
+        Permission::create([
+            'name'          => 'Creación de motivos',
+            'slug'          => 'tblmotivo.create',
+            'description'   => 'Podría crear nuevas motivos en el sistema',
+        ]);
+        
+        Permission::create([
+            'name'          => 'Edición de motivos',
+            'slug'          => 'tblmotivo.edit',
+            'description'   => 'Podría editar cualquier dato de una motivo del sistema',
+        ]);
+        
+        Permission::create([
+            'name'          => 'Eliminar motivos',
+            'slug'          => 'tblmotivo.destroy',
+            'description'   => 'Podría eliminar cualquier motivo del sistema',      
+        ]);
+
     }
 }

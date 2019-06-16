@@ -179,6 +179,7 @@ return [
         Orangehill\Iseed\IseedServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
+        devsrv\sessionout\sessionExpiredServiceProvider::class,
         
     ],
 
