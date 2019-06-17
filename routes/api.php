@@ -16,6 +16,8 @@ use Illuminate\Http\Request;
 Route::get('barcodeInfo/{code}', 'CedulaController@barcodeInfo');
 Route::get('getDiligencia', 'TbldiligenciaController@getDiligencia');
 Route::get('getMotivo', 'TblmotivoController@getMotivo');
+Route::post('uploadData', 'CedulaController@uploadData');
+Route::post('uploadFile', 'CedulaController@uploadFile');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

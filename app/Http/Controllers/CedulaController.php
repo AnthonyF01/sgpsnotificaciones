@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use App\Cedula;
 use App\Tblinstancia;
 
@@ -89,6 +90,7 @@ class CedulaController extends Controller
 
     public function barcodeInfo($barcode)
     {
+
         $sij='';$fced='';$nced='';$fexp='';$nexp='';$csede='';$cdesc='';$cinc='';$cjuz='';
         $expediente = '';
         $juzgado = '';
@@ -131,11 +133,23 @@ class CedulaController extends Controller
         $sjuz = Tblinstancia::where('c_instancia','=',$cjuz)->first();
         if (isset($sjuz->x_nom_instancia) && !empty($sjuz->x_nom_instancia) && ($sjuz->x_nom_instancia)) {
             $juzgado = $sjuz->x_nom_instancia;
-            return response()->json(['success' => [$expediente, $cedula, $juzgado]], $this->successStatus);
+            $tblinstancia_id = $sjuz->id;
+            return response()->json(['success' => [$expediente, $cedula, $juzgado, $tblinstancia_id]], $this->successStatus);
         }else {
             return response()->json(['error' => ['La instancia no existe en la base de datos. Error en el código de barras.']], $this->successStatus);
         }
 
+    }
 
+    public function uploadData(Request $request)
+    {
+        Log::info('uploadData: ', ['request' => $request->all()]);
+    }
+
+    public function uploadFile(Request $request)
+    {
+        if ($request->file('photo') && $request->hasFile('photo')) {
+            Log::info('success: ', ['request' => $request->all()]);
+        }
     }
 }
