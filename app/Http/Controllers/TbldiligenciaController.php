@@ -6,6 +6,7 @@ use App\Models\Tbldiligencia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class TbldiligenciaController extends Controller
 {
@@ -149,6 +150,7 @@ class TbldiligenciaController extends Controller
     public function getDiligencia()
     {
         $diligencia = Tbldiligencia::select('id','nombre')->get();
+        Log::info('getDiligencia: ', ['diligencia' => $diligencia]);
         return response()->json([
             'diligencia' => $diligencia,
         ]);
